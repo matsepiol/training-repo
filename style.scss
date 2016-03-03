@@ -1,0 +1,67 @@
+$mobile-screen: 415px;
+$tablet-screen: 770px;
+
+body {
+  background-color: #000;
+}
+
+header {
+  position: relative;
+  height: 85px;
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.logo {
+  margin: 10px;
+}
+
+.menu {
+  height: 20px;
+  font-size: 16px;
+  padding-left: 1.25em;
+
+  // do not display menu when not mobile
+  @media screen and (min-width: $mobile-screen) {
+    display: none;
+  }
+}
+
+.menu:before {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 0;
+  width: 1em;
+  height: 0.125em;
+  border-top: 0.375em double #ffc603;
+  border-bottom: 0.125em solid #ffc603;
+}
+
+.request-button {
+  //styling not done yet, so:
+  display: none;
+}
+
+//styling for mobile
+@media screen and (max-width: $mobile-screen) {
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+//styling for tablet
+@media screen and (min-width: $mobile-screen) and (max-width: $tablet-screen) {
+
+}
+
+//styling for desktop
+@media screen and (min-width: $tablet-screen) {
+
+}

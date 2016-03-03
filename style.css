@@ -1,0 +1,42 @@
+body {
+  background-color: #000; }
+
+header {
+  position: relative;
+  height: 85px; }
+  header .centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.logo {
+  margin: 10px; }
+
+.menu {
+  height: 20px;
+  font-size: 16px;
+  padding-left: 1.25em; }
+  @media screen and (min-width: 415px) {
+    .menu {
+      display: none; } }
+
+.menu:before {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 0;
+  width: 1em;
+  height: 0.125em;
+  border-top: 0.375em double #ffc603;
+  border-bottom: 0.125em solid #ffc603; }
+
+.request-button {
+  display: none; }
+
+@media screen and (max-width: 415px) {
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); } }
+
+/*# sourceMappingURL=style.css.map */
