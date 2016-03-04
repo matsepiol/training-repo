@@ -1,67 +1,317 @@
 $mobile-screen: 415px;
 $tablet-screen: 770px;
 
+$yellow: #ffc603;
+$orange: #d98000;
+$grey: #999999;
+$border-color: #382f0b;
+
+@mixin screen-size($breakpoint) {
+  @if $breakpoint == "mobile" {
+    @media (max-width: $mobile-screen) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "tablet" {
+    @media (min-width: $mobile-screen) and (max-width: $tablet-screen) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "desktop" {
+    @media (min-width: $tablet-screen) {
+      @content;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('./font/fontello.eot?98249676');
+  src: url('./font/fontello.eot?98249676#iefix') format('embedded-opentype'),
+       url('./font/fontello.woff?98249676') format('woff'),
+       url('./font/fontello.ttf?98249676') format('truetype'),
+       url('./font/fontello.svg?98249676#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+}
+
+@mixin center-horizontaly() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-vertically() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 body {
   background-color: #000;
+  margin: 0;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 
 header {
   position: relative;
   height: 85px;
+  margin: 0 5px;
+}
 
-  .centered {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+h1 {
+  color: $orange;
+  font-weight: 100;
+  margin-left: 10px;
+}
+
+p {
+  color: #fff;
+}
+
+article {
+  display: block;
+  margin: 20px 10px;
+
+  img {
+    float: left;
+  }
+
+  p {
+    margin: 5px 0 0 130px;
   }
 }
+
+.bottom-border {
+  border-bottom: 1px solid $border-color;
+}
+
+//@include screen-size('mobile') {
+  .song-menu {
+    height: 100vh;
+    background: url('img/background.png') no-repeat 100%;
+    //background-size: 100%;
+  }
+//}
 
 .logo {
   margin: 10px;
+  
+  //@include screen-size('mobile') {
+    @include center-vertically;
+  //}
 }
 
-.menu {
-  height: 20px;
-  font-size: 16px;
-  padding-left: 1.25em;
-
-  // do not display menu when not mobile
-  @media screen and (min-width: $mobile-screen) {
-    display: none;
-  }
+.menu-icon {
+  @include center-horizontaly;
+  color: $yellow;
+  cursor: pointer;
 }
 
-.menu:before {
-  content: "";
-  position: absolute;
-  top: 0.25em;
-  left: 0;
-  width: 1em;
-  height: 0.125em;
-  border-top: 0.375em double #ffc603;
-  border-bottom: 0.125em solid #ffc603;
+.volume-icon {
+  float: right;
+  margin-top: 30px;
+  padding: 2px;
+  color: $yellow;
+  border-radius: 15px;
+  border: 2px solid $yellow;
+  cursor: pointer;
+
 }
+
+.more-button {
+  color: $yellow;
+  margin: 15px 0 0 130px;
+  cursor: pointer;
+}
+
+.more-icon {
+  color: $yellow;
+  border-radius: 15px;
+  border: 1px solid $yellow;
+  padding-left: 1px;
+  cursor: pointer;
+
+}
+
 
 .request-button {
   //styling not done yet, so:
   display: none;
 }
 
-//styling for mobile
-@media screen and (max-width: $mobile-screen) {
-  .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.currently-played-img {
+  display: block;
+  margin: 0 auto;
+}
+
+.song-data {
+  margin: 20px 0;
+
+  .author {
+    color: #fff;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .title {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
   }
 }
 
+
+.button-wrapper {
+  width: 137px;
+  margin: 10px auto 0 auto;
+
+  .font-icon {
+    cursor: pointer;
+    background-color: $yellow;
+  }
+
+  .stop-icon {
+    border-radius: 14px;
+    padding: 6px;
+  }
+
+  .play-icon {
+    border-radius: 28px;
+    padding: 14px;
+    font-size: 24px;
+    padding-left: 19px;
+  }
+
+  .forward-icon {
+    border-radius: 16px;
+    padding: 6px;
+    padding-left: 9px;
+  }
+}
+
+.recently-played {
+  .song-wrapper {
+    margin: 20px 10px;
+  }
+
+  p {
+    margin: 0 0 0 70px;
+  }
+
+  img {
+    margin-top: 5px;
+    float: left;
+  }
+
+  .song-author {
+    font-size: 15px;
+  }
+
+  .song-duration {
+    color: $grey;
+    font-weight: 700;
+  }
+}
+
+.concerts {
+  .update-date {
+    color: $grey;
+    font-size: 13px;
+  }
+
+  .concert-details {
+    font-size: 14px;
+  }
+
+  .more-button {
+    color: $yellow;
+    margin: 15px 0 0 130px;
+
+    .more-icon {
+      border-radius: 15px;
+      border: 1px solid $yellow;
+      padding-left: 1px;
+    }
+  }
+}
+
+.contests {
+  .contest-date, .contest-details {
+    color: $grey;
+    font-size: 13px;
+  }
+}
+
+.perks {
+  .perk-date, .perk-details {
+    color: $grey;
+    font-size: 13px;
+  }
+}
+
+.links {
+  p {
+    margin: 0;
+    display: inline-block;
+  }
+
+  .more-icon {
+    float: right;
+  }
+}
+
+.stations {
+  p {
+    margin: 0;
+    display: inline-block;
+    width: 80%;
+  }
+
+  .radio-location, .radio-details {
+    color: $grey;
+    font-size: 11px;
+  }
+
+  div {
+    float: right;
+
+    .more-icon {
+      bottom: 20px;
+      position: relative;
+    }
+  }
+}
+
+/* 
+//styling for mobile
+@include screen-size('mobile') {
+
+}
+
+
 //styling for tablet
-@media screen and (min-width: $mobile-screen) and (max-width: $tablet-screen) {
+@include screen-size('tablet') {
 
 }
 
 //styling for desktop
-@media screen and (min-width: $tablet-screen) {
+@include screen-size('desktop') {
 
-}
+} 
+*/
