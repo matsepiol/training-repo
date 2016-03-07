@@ -8,19 +8,32 @@
   </head>
 
   <body>
-    <section class='song-menu' role='region'>
-      
-      <header role='header'>
-        <i class="font-icon menu-icon">&#xe800;</i>
-        <img class="logo" src="img/logo.png" alt="logo"> 
-        <i class="font-icon volume-icon">&#xe807;</i>
-        <button type="button" class="request-button">Request a Song</button>
-      </header>
+  
+    <header role='header'>
+      <i class="font-icon menu-icon">&#xe800;</i>
+      <img class="logo" src="img/logo.png" alt="logo"> 
+      <i class="font-icon volume-icon">&#xe807;</i>
+      <span class="player">
+        <span class="active-duration-line"> </span>
+        <span class="slide-button"> </span>
+        <span class="passive-duration-line"> </span>
+        <i class="font-icon volume-player">&#xe807;</i>
+      </span>
+      <button type="button" class="request-button">Request a Song</button>
+    </header>
 
+    <div class="first-row row">
       <section class='currently-played' role='region'>
         <img class='currently-played-img' src="img/JH.png" alt="hendrix">
 
+        <div class='socials-buttons'> 
+          <i class="font-icon msg-icon">&#xe801;</i>
+          <i class="font-icon fb-icon">&#xe803;</i>
+          <i class="font-icon twitter-icon">&#xe802;</i>
+        </div>
+
         <div class="song-data">
+          <p class="info"> Now Playing: </p>
           <p class="author"> Jimi Hendrix Experience </p>
           <p class="title"> Long Hot Summer Night </p>
         </div>
@@ -30,221 +43,222 @@
           <i class="font-icon play-icon">&#xe809;</i>
           <i class="font-icon forward-icon">&#xe808;</i>
         </div>
-
       </section>
-    </section>
 
-    <section class="recently-played bottom-border" role='region'>
-      <h1> Recently Played </h1>
+      <section class="recently-played bottom-border" role='region'>
+        <h1> Recently Played </h1>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/GT&tD.png" alt="George Thorogood & the Destroyers">
-        <p class="song-author">George Thorogood &amp; the Destroyers</p>
-        <p class="song-title">Bad to the Bone</p>
-        <p class="song-duration">9:36</p>
-      </article>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/GT&tD.png" alt="George Thorogood & the Destroyers">
+          <p class="song-author">George Thorogood &amp; the Destroyers</p>
+          <p class="song-title">Bad to the Bone</p>
+          <p class="song-duration">9:36</p>
+        </article>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/LS.png" alt="Lynyrd Skynyrd">
-        <p class="song-author">Lynyrd Skynyrd</p>
-        <p class="song-title">Free Bird</p>
-        <p class="song-duration">7:31</p>
-      </article>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/LS.png" alt="Lynyrd Skynyrd">
+          <p class="song-author">Lynyrd Skynyrd</p>
+          <p class="song-title">Free Bird</p>
+          <p class="song-duration">7:31</p>
+        </article>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/LZ.png" alt="Led Zeppelin">
-        <p class="song-author">Led Zeppelin</p>
-        <p class="song-title">Stairway to Heaven</p>
-        <p class="song-duration">6:22</p>
-      </article>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/LZ.png" alt="Led Zeppelin">
+          <p class="song-author">Led Zeppelin</p>
+          <p class="song-title">Stairway to Heaven</p>
+          <p class="song-duration">6:22</p>
+        </article>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/TheWho.png" alt="The Who">
-        <p class="song-author">The Who</p>
-        <p class="song-title">Won't Get Fooled Again</p>
-        <p class="song-duration">5:31</p>
-      </article>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/TheWho.png" alt="The Who">
+          <p class="song-author">The Who</p>
+          <p class="song-title">Won't Get Fooled Again</p>
+          <p class="song-duration">5:31</p>
+        </article>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/TRS.png" alt="The Rolling Stones">
-        <p class="song-author">The Rolling Stones</p>
-        <p class="song-title">You Can't Always Get What You Want</p>
-        <p class="song-duration">8:31</p>
-      </article>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/TRS.png" alt="The Rolling Stones">
+          <p class="song-author">The Rolling Stones</p>
+          <p class="song-title">You Can't Always Get What You Want</p>
+          <p class="song-duration">8:31</p>
+        </article>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/GunsNRoses.png" alt="Guns N' Roses">
-        <p class="song-author">Guns N' Roses</p>
-        <p class="song-title">Patience</p>
-        <p class="song-duration">4:34</p>
-      </article>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/GunsNRoses.png" alt="Guns N' Roses">
+          <p class="song-author">Guns N' Roses</p>
+          <p class="song-title">Patience</p>
+          <p class="song-duration">4:34</p>
+        </article>
 
-      <article class='song-wrapper' role='article'>
-        <img class="author-img" src="img/Cindarella.png" alt="Cindarella">
-        <p class="song-author">Cindarella</p>
-        <p class="song-title">Don't Know What You Got (Till It's Gone)</p>
-        <p class="song-duration">6:15</p>
-      </article>
-    </section>
+        <article class='song-wrapper' role='article'>
+          <img class="author-img" src="img/Cindarella.png" alt="Cindarella">
+          <p class="song-author">Cindarella</p>
+          <p class="song-title">Don't Know What You Got (Till It's Gone)</p>
+          <p class="song-duration">6:15</p>
+        </article>
+      </section>
+    </div>
 
-    <section class="concerts bottom-border" role='region'>
-      <h1> Concerts </h1>
+    <div class="second-row row">
+      <section class="concerts bottom-border" role='region'>
+        <h1> Concerts </h1>
 
-      <article class='concert-wrapper' role='article'>
-        <img class="concert-img" src="img/Styx.png" alt="Styx">
-        <p class="update-date">29.10.2014 8:49 AM</p>
-        <p class="concert-artist">Styx</p>
-        <p class="concert-details">Wednesday, January 28th | City National Civic, San Jose </p>
-        <div class="more-button">
-          <span> More </span>
+        <article class='concert-wrapper' role='article'>
+          <img class="concert-img" src="img/Styx.png" alt="Styx">
+          <p class="update-date">29.10.2014 8:49 AM</p>
+          <p class="concert-artist">Styx</p>
+          <p class="concert-details">Wednesday, January 28th | City National Civic, San Jose </p>
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+
+        <article class='concert-wrapper' role='article'>
+          <img class="concert-img" src="img/Ringo.png" alt="Ringo Starr">
+          <p class="update-date">11.12.2014 10:54 PM</p>
+          <p class="concert-artist">Ringo Starr and His All Starr Band</p>
+          <p class="concert-details">Friday, March 13th, 2015 | The Masonic, San Francisco</p>
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+
+        <article class='concert-wrapper' role='article'>
+          <img class="concert-img" src="img/FM.png" alt="Fleetwood Mac">
+          <p class="update-date">18.11.2014 6:39 PM</p>
+          <p class="concert-artist">Fleetwood Mac: On With The Show</p>
+          <p class="concert-details">Tuesday, April 7th | Oracle Arena, Oakland</p>
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+      </section>
+
+      <section class="contests bottom-border" role='region'>
+        <h1> Contests </h1>
+
+        <article class="contest-wrapper" role='article'>
+          <img class="contest-img" src="img/Beer.png" alt="Free Beer Friday">
+          <p class="contest-date">29.10.2014 8:49 AM</p>
+          <p class="contest-title">Free Beer Friday - Buffalo Wild Wings </p>
+          <p class="contest-details"> Get ready for Free Beer Friday! For a shot to win a $20 gift card to Buffalo Wild Wings, text BEER to 96211* all day on Friday. For more info click here.</p>
+
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+
+        <article class="contest-wrapper" role='article'>
+          <img class="contest-img" src="img/Party.png" alt="Win Kurios tickets with Chris Jackson">
+          <p class="contest-date">18.11.2014 6:39 PM</p>
+          <p class="contest-title">Win Kurios tickets with Chris Jackson </p>
+          <p class="contest-details">Listen to Chris Jackson in the 6am hour for a chance to win tickets to the show on NYE! Click here for more info. </p>
+
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+      </section>
+
+      <section class="perks bottom-border" role='region'>
+        <h1> Get My PERKS </h1>
+        <article class="perk-wrapper" role='article'>
+          <img class="perk-img" src="img/Auto_Spa.png" alt="Auto Spa">
+          <p class="perk-date">23.12.2014 9:32 AM</p>
+          <p class="perk-title">Half Off Winter Detailing Service from DoubleTake Auto Spa&#33;</p>
+          <p class="perk-details"> Our Winter Blitz detailing service will protect your vehicle exterior and interior during these harsh winter months. We&#39;ll first clean your paint with our clay bar treatment to remove all those demaging contaminates. </p>
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+
+        <article class="perk-wrapper" role='article'>
+          <img class="perk-img" src="img/Dinner.png" alt="Izakaya Roku">
+          <p class="perk-date">11.12.2014 10:17 PM</p>
+          <p class="perk-title">$28 -- 'Sleek' Izakaya Roku: Dinner for 2 on Market</p>
+          <p class="perk-details"> </p>
+          <div class="more-button">
+            <span> More </span>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
+      </section>
+    </div>
+    
+    <div class="third-row row">
+      <section class="links bottom-border" role='region'>
+        <h1>KFOX Links </h1>
+
+        <article class='link-wrapper' role='article'>
+          <p class="link-title"> KFOX Blog </p>
           <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
+        </article>
 
-      <article class='concert-wrapper' role='article'>
-        <img class="concert-img" src="img/Ringo.png" alt="Ringo Starr">
-        <p class="update-date">11.12.2014 10:54 PM</p>
-        <p class="concert-artist">Ringo Starr and His All Starr Band</p>
-        <p class="concert-details">Friday, March 13th, 2015 | The Masonic, San Francisco</p>
-        <div class="more-button">
-          <span> More </span>
+        <article class='link-wrapper' role='article'>
+          <p class="link-title"> Facebook </p>
           <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
+        </article>
 
-      <article class='concert-wrapper' role='article'>
-        <img class="concert-img" src="img/FM.png" alt="Fleetwood Mac">
-        <p class="update-date">18.11.2014 6:39 PM</p>
-        <p class="concert-artist">Fleetwood Mac: On With The Show</p>
-        <p class="concert-details">Tuesday, April 7th | Oracle Arena, Oakland</p>
-        <div class="more-button">
-          <span> More </span>
+        <article class='link-wrapper' role='article'>
+          <p class="link-title"> Twitter </p>
           <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
-    </section>
+        </article>
 
-    <section class="contests bottom-border" role='region'>
-      <h1> Contests </h1>
-
-      <article class="contest-wrapper" role='article'>
-        <img class="contest-img" src="img/Beer.png" alt="Free Beer Friday">
-        <p class="contest-date">29.10.2014 8:49 AM</p>
-        <p class="contest-title">Free Beer Friday - Buffalo Wild Wings </p>
-        <p class="contest-details"> Get ready for Free Beer Friday! For a shot to win a $20 gift card to Buffalo Wild Wings, text BEER to 96211* all day on Friday. For more info click here.</p>
-
-        <div class="more-button">
-          <span> More </span>
+        <article class='link-wrapper' role='article'>
+          <p class="link-title"> Concert Calendar </p>
           <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
+        </article>
 
-      <article class="contest-wrapper" role='article'>
-        <img class="contest-img" src="img/Party.png" alt="Win Kurios tickets with Chris Jackson">
-        <p class="contest-date">18.11.2014 6:39 PM</p>
-        <p class="contest-title">Win Kurios tickets with Chris Jackson </p>
-        <p class="contest-details">Listen to Chris Jackson in the 6am hour for a chance to win tickets to the show on NYE! Click here for more info. </p>
-
-        <div class="more-button">
-          <span> More </span>
+        <article class='link-wrapper' role='article'>
+          <p class="link-title"> Calendar </p>
           <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
-    </section>
+        </article>
+      </section>
 
-    <section class="perks bottom-border" role='region'>
-      <h1> Get My PERKS </h1>
-      <article class="perk-wrapper" role='article'>
-        <img class="perk-img" src="img/Auto_Spa.png" alt="Auto Spa">
-        <p class="perk-date">23.12.2014 9:32 AM</p>
-        <p class="perk-title">Half Off Winter Detailing Service from DoubleTake Auto Spa&#33;</p>
-        <p class="perk-details"> Our Winter Blitz detailing service will protect your vehicle exterior and interior during these harsh winter months. We&#39;ll first clean your paint with our clay bar treatment to remove all those demaging contaminates. </p>
-        <div class="more-button">
-          <span> More </span>
-          <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
+      <section class="stations" role='region'>
+        <h1>Station Directory </h1>
+        <article class='station-wrapper' role='article'> 
+          <p class='radio-name'> 102&#46;9 KBLX </p>
+          <p class='radio-location'> San Francisco &#45; Oakland &#45; San Jose CA </p>
+          <p class='radio-details'> R&amp;B &#47; KBLX&#45;FM</p>
+          <div>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
 
-      <article class="perk-wrapper" role='article'>
-        <img class="perk-img" src="img/Dinner.png" alt="Izakaya Roku">
-        <p class="perk-date">11.12.2014 10:17 PM</p>
-        <p class="perk-title">$28 -- 'Sleek' Izakaya Roku: Dinner for 2 on Market</p>
-        <p class="perk-details"> </p>
-        <div class="more-button">
-          <span> More </span>
-          <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
-    </section>
+        <article class='station-wrapper' role='article'> 
+          <p class='radio-name'> 95&#46;7 The GAME </p>
+          <p class='radio-location'> San Francisco &#45; Oakland &#45; San Jose CA </p>
+          <p class='radio-details'> Sports &#47; KGMZ&#45;FM</p>
+          <div>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>
+        </article>
 
-    <section class="links bottom-border" role='region'>
-      <h1>KFOX Links </h1>
+        <article class='station-wrapper' role='article'> 
+          <p class='radio-name'> 96&#46;5 KOIT </p>
+          <p class='radio-location'> San Francisco &#45; Oakland &#45; San Jose CA </p>
+          <p class='radio-details'> Adult Contemporary &#47; KOIT&#45;FM</p>
+          <div>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>      </article>
 
-      <article class='link-wrapper' role='article'>
-        <p class="link-title"> KFOX Blog </p>
-        <i class='font-icon more-icon'>&#xe806;</i>
-      </article>
-
-      <article class='link-wrapper' role='article'>
-        <p class="link-title"> Facebook </p>
-        <i class='font-icon more-icon'>&#xe806;</i>
-      </article>
-
-      <article class='link-wrapper' role='article'>
-        <p class="link-title"> Twitter </p>
-        <i class='font-icon more-icon'>&#xe806;</i>
-      </article>
-
-      <article class='link-wrapper' role='article'>
-        <p class="link-title"> Concert Calendar </p>
-        <i class='font-icon more-icon'>&#xe806;</i>
-      </article>
-
-      <article class='link-wrapper' role='article'>
-        <p class="link-title"> Calendar </p>
-        <i class='font-icon more-icon'>&#xe806;</i>
-      </article>
-    </section>
-
-    <section class="stations" role='region'>
-      <h1>Station Directory </h1>
-      <article class='station-wrapper' role='article'> 
-        <p class='radio-name'> 102&#46;9 KBLX </p>
-        <p class='radio-location'> San Francisco &#45; Oakland &#45; San Jose CA </p>
-        <p class='radio-details'> R&amp;B &#47; KBLX&#45;FM</p>
-        <div>
-          <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
-
-      <article class='station-wrapper' role='article'> 
-        <p class='radio-name'> 95&#46;7 The GAME </p>
-        <p class='radio-location'> San Francisco &#45; Oakland &#45; San Jose CA </p>
-        <p class='radio-details'> Sports &#47; KGMZ&#45;FM</p>
-        <div>
-          <i class='font-icon more-icon'>&#xe806;</i>
-        </div>
-      </article>
-
-      <article class='station-wrapper' role='article'> 
-        <p class='radio-name'> 96&#46;5 KOIT </p>
-        <p class='radio-location'> San Francisco &#45; Oakland &#45; San Jose CA </p>
-        <p class='radio-details'> Adult Contemporary &#47; KOIT&#45;FM</p>
-        <div>
-          <i class='font-icon more-icon'>&#xe806;</i>
-        </div>      </article>
-
-      <article class='station-wrapper' role='article'> 
-        <p class='radio-name'> Q102 </p>
-        <p class='radio-location'> San Francisco - Oakland - San Jose CA </p>
-        <p class='radio-details'> Hot AC &#47; KRBQ&#45;FM</p>
-        <div>
-          <i class='font-icon more-icon'>&#xe806;</i>
-        </div>      
-      </article>
-
-    </section>
-
+        <article class='station-wrapper' role='article'> 
+          <p class='radio-name'> Q102 </p>
+          <p class='radio-location'> San Francisco - Oakland - San Jose CA </p>
+          <p class='radio-details'> Hot AC &#47; KRBQ&#45;FM</p>
+          <div>
+            <i class='font-icon more-icon'>&#xe806;</i>
+          </div>      
+        </article>
+      </section>
+    </div>
   </body>
 
 </html> 
