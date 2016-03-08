@@ -4,8 +4,6 @@
   "description": "first package",
   "main": "main.js",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "node-sass": "^3.4.2"
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
