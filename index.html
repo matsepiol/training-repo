@@ -12,59 +12,62 @@
   <body>
     <span class="mobile-background"></span>
 
-    <section class="mobile-menu" role='region'>
-      <article class='menu-item active' role='article'>
-        <p class="link-title">Now Playing</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
+    <nav class="mobile-menu" role='navigation'>
+      <ul>
 
-      <article class='menu-item' role='article'>
-        <p class="link-title">Recently Played</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
+        <li class='menu-item active'>
+          <a href="./">
+            <p class="link-title">Now Playing</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
 
-      <article class='menu-item' role='article'>
-        <p class="link-title">Concerts</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
+        <li class='menu-item'>
+          <a href="./">
+            <p class="link-title">Recently Played</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
 
-      <article class='menu-item' role='article'>
-        <p class="link-title">Contests</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
+        <li class='menu-item'>
+          <a href="./">
+            <p class="link-title">Concerts</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
 
-      <article class='menu-item' role='article'>
-        <p class="link-title">Get my PERKS</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
+        <li class='menu-item'>
+          <a href="./">
+            <p class="link-title">Contests</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
 
-      <article class='menu-item' role='article'>
-        <p class="link-title">KFOX Links</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
+        <li class='menu-item'>
+          <a href="./">
+            <p class="link-title">Get my PERKS</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
 
-      <article class='menu-item' role='article'>
-        <p class="link-title">Station Directory</p>
-        <a href="./">
-          <i class='font-icon more-icon'></i>
-        </a>
-      </article>
-    </section>
+        <li class='menu-item'>
+          <a href="./">
+            <p class="link-title">KFOX Links</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
+
+        <li class='menu-item'>
+          <a href="./">
+            <p class="link-title">Station Directory</p>
+            <i class='font-icon more-icon'></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <header class="header" role='header'>
-      <i class="font-icon menu-icon"></i>
+      <i class="font-icon menu-icon" onclick="showMenu(this)"></i>
       <img class="logo" src="img/logo.png" alt="logo"> 
       <i class="font-icon volume-icon"></i>
 
@@ -72,8 +75,14 @@
         <source src="sample.mp3" type="audio/mp3">
       </audio>
 
+      <div class="header-button-wrapper">
+        <i class="font-icon stop-icon" onclick="pause()"></i>
+        <i id="play-button" class="font-icon trigger-button play-icon" onclick="play()"></i>
+        <i class="font-icon forward-icon" onclick="rewind()"></i>
+      </div>
+
        <div class="custom-player">
-        <span class="duration-line" onclick="getPosition(this,event)"> <span id='line' class="active-duration-line"> </span> </span>
+        <span class="duration-line" onclick="getSliderPosition(this,event)"> <span id='line' class="active-duration-line"> </span> </span>
         <span class="slide-button"> </span>
         <i class="font-icon volume-icon volume-player"></i>
       </div>
@@ -84,34 +93,37 @@
     <div class="sections">
       <div class="first-row row">
         <section class='section currently-played' role='region'>
-          <img class='currently-played-img' src="img/JH.png" alt="hendrix">
 
-          <div class='socials-buttons'> 
-            <a href="./">
-              <i class="font-icon icon-mail-alt"></i>
-            </a>
-            <a href="./">
-              <i class="font-icon icon-facebook"></i>
-            </a>
-            <a href="./">
-              <i class="font-icon icon-twitter"></i>
-            </a>
-          </div>
+          <div class="img-wrapper">
+            <img class='currently-played-img' src="img/JH.png" alt="hendrix">
 
-          <div class="song-data">
-            <p class="info">Now Playing:</p>
-            <p class="author">Jimi Hendrix Experience</p>
-            <p class="title">Long Hot Summer Night</p>
-          </div>
+            <div class='socials-buttons'> 
+              <a href="./">
+                <i class="font-icon icon-mail-alt"></i>
+              </a>
+              <a href="./">
+                <i class="font-icon icon-facebook"></i>
+              </a>
+              <a href="./">
+                <i class="font-icon icon-twitter"></i>
+              </a>
+            </div>
 
-          <div class="thumbs-buttons">
-            <i class="font-icon icon-thumbs-up"></i>
-            <i class="font-icon icon-thumbs-down"></i>
+            <div class="song-data">
+              <p class="info">Now Playing:</p>
+              <p class="author">Jimi Hendrix Experience</p>
+              <p class="title">Long Hot Summer Night</p>
+            </div>
+
+            <div class="thumbs-buttons">
+              <i class="font-icon icon-thumbs-up"></i>
+              <i class="font-icon icon-thumbs-down"></i>
+            </div>
           </div>
 
           <div class="button-wrapper">
             <i class="font-icon stop-icon" onclick="pause()"></i>
-            <i class="font-icon play-icon" onclick="play()"></i>
+            <i class="font-icon play-icon trigger-button" onclick="play()"></i>
             <i class="font-icon forward-icon" onclick="rewind()"></i>
           </div>
         </section>
@@ -267,36 +279,36 @@
           <h1>KFOX Links</h1>
 
           <article class='article link-wrapper' role='article'>
-            <p class="link-title">KFOX Blog</p>
             <a href="./">
+              <p class="link-title">KFOX Blog</p>
               <i class='font-icon more-icon'></i>
             </a>
             </article>
 
           <article class='article link-wrapper' role='article'>
-            <p class="link-title">Facebook</p>
             <a href="./">
+              <p class="link-title">Facebook</p>
               <i class='font-icon more-icon'></i>
             </a>
           </article>
 
           <article class='article link-wrapper' role='article'>
-            <p class="link-title">Twitter</p>
             <a href="./">
+              <p class="link-title">Twitter</p>
               <i class='font-icon more-icon'></i>
             </a>
           </article>
 
           <article class='article link-wrapper' role='article'>
-            <p class="link-title">Concert Calendar</p>
             <a href="./">
+              <p class="link-title">Concert Calendar</p>
               <i class='font-icon more-icon'></i>
             </a>
           </article>
 
           <article class='article link-wrapper' role='article'>
-            <p class="link-title">Calendar</p>
-            <a href="./">
+            <a href="./"> 
+              <p class="link-title">Calendar</p>
               <i class='font-icon more-icon'></i>
             </a>
           </article>
@@ -305,7 +317,9 @@
         <section class="section stations" role='region'>
           <h1>Station Directory</h1>
           <article class='article station-wrapper' role='article'> 
-            <p class='radio-name'>102&#46;9 KBLX</p>
+            <a href="./">
+              <p class='radio-name'>102&#46;9 KBLX</p>
+            </a>
             <p class='radio-location'>San Francisco &#45; Oakland &#45; San Jose CA</p>
             <p class='radio-details'>R&amp;B &#47; KBLX&#45;FM</p>
             <a href="./">
@@ -314,7 +328,9 @@
           </article>
 
           <article class='article station-wrapper' role='article'> 
-            <p class='radio-name'>95&#46;7 The GAME</p>
+            <a href="./">
+              <p class='radio-name'>95&#46;7 The GAME</p>
+            </a>
             <p class='radio-location'>San Francisco &#45; Oakland &#45; San Jose CA</p>
             <p class='radio-details'>Sports &#47; KGMZ&#45;FM</p>
             <a href="./">
@@ -322,8 +338,10 @@
             </a>
           </article>
 
-          <article class='article station-wrapper' role='article'> 
-            <p class='radio-name'>96&#46;5 KOIT</p>
+          <article class='article station-wrapper' role='article'>
+            <a href="./">
+              <p class='radio-name'>96&#46;5 KOIT</p>
+            </a>
             <p class='radio-location'>San Francisco &#45; Oakland &#45; San Jose CA</p>
             <p class='radio-details'>Adult Contemporary &#47; KOIT&#45;FM</p>
             <a href="./">
@@ -332,7 +350,9 @@
           </article>
 
           <article class='article station-wrapper' role='article'> 
-            <p class='radio-name'>Q102</p>
+            <a href="./">
+              <p class='radio-name'>Q102</p>
+            </a>
             <p class='radio-location'>San Francisco - Oakland - San Jose CA</p>
             <p class='radio-details'>Hot AC &#47; KRBQ&#45;FM</p>
             <a href="./">

@@ -16,37 +16,40 @@
   text-align: center; }
 
 .menu-icon:before {
-  content: '\e800'; }
-
-.icon-mail-alt:before {
-  content: '\e801'; }
-
-.icon-twitter:before {
-  content: '\e802'; }
-
-.icon-facebook:before {
   content: '\e803'; }
 
+.icon-mail-alt:before {
+  content: '\e800'; }
+
+.icon-twitter:before {
+  content: '\e80a'; }
+
+.icon-facebook:before {
+  content: '\e809'; }
+
 .icon-thumbs-up:before {
-  content: '\e804'; }
+  content: '\e801'; }
 
 .icon-thumbs-down:before {
-  content: '\e805'; }
+  content: '\e802'; }
 
 .more-icon:before {
-  content: '\e806'; }
+  content: '\e805'; }
 
 .volume-icon:before {
-  content: '\e807'; }
+  content: '\e804'; }
 
 .forward-icon:before {
   content: '\e808'; }
 
 .play-icon:before {
-  content: '\e809'; }
+  content: '\e806'; }
 
 .stop-icon:before {
-  content: '\e80a'; }
+  content: '\e807'; }
+
+.pause-icon:before {
+  content: '\e80b'; }
 
 body {
   background-color: #000;
@@ -97,14 +100,17 @@ p {
 
 .currently-played {
   position: relative; }
-  @media (max-width: 768px) {
-    .currently-played {
-      height: 80vh; } }
   @media (min-width: 768px) and (max-width: 1267px) {
     .currently-played {
       max-height: 380px; } }
 
+.img-wrapper {
+  max-width: 379px;
+  position: relative;
+  margin: 0 auto; }
+
 .logo {
+  float: left;
   margin: 10px; }
   @media (max-width: 768px) {
     .logo {
@@ -131,9 +137,17 @@ p {
     position: absolute;
     background-color: #000;
     z-index: 1;
-    height: 585px;
-    width: 75%;
-    padding: 25px; }
+    height: 100vh;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: width 1s, padding 1s; }
+    .mobile-menu li {
+      height: 35px;
+      margin: 15px 0;
+      overflow: hidden; }
+    .mobile-menu a {
+      display: block; }
     .mobile-menu .link-title {
       display: inline-block;
       color: #d98000; }
@@ -189,12 +203,12 @@ p {
 
 @media (min-width: 768px) {
   .custom-player {
-    position: absolute;
-    left: 360px;
-    top: 45%;
+    float: left;
+    position: relative;
+    top: 38px;
     cursor: pointer; }
     .custom-player .active-duration-line {
-      width: 0;
+      width: 75px;
       height: 5px;
       background-color: #ffc603;
       float: left; }
@@ -210,7 +224,7 @@ p {
       position: absolute;
       border-radius: 50%;
       bottom: -11px;
-      left: 0%;
+      left: 40%;
       border: 4px solid #ffc603; }
     .custom-player .volume-player {
       float: left;
@@ -224,7 +238,8 @@ p {
   max-width: 98%; }
   @media (max-width: 768px) {
     .currently-played-img {
-      margin: 0 auto; } }
+      margin: 0 auto;
+      height: 48vh; } }
   @media (min-width: 768px) {
     .currently-played-img {
       margin: 0 5px; } }
@@ -243,10 +258,10 @@ p {
       color: #000; }
     .socials-buttons .font-icon {
       background-color: #fff;
-      width: 20px;
-      height: 20px;
+      width: 26px;
+      height: 21px;
       border-radius: 50%;
-      padding: 3px;
+      padding: 6px 3px 3px 3px;
       margin: 5px 0;
       cursor: pointer; } }
 
@@ -259,9 +274,9 @@ p {
     color: #fff;
     font-size: 22px;
     position: absolute;
-    top: 280px;
+    bottom: 25px;
     width: 20px;
-    left: 340px; }
+    right: 20px; }
     .thumbs-buttons .font-icon {
       margin: 4px 0;
       cursor: pointer; } }
@@ -292,27 +307,32 @@ p {
         text-align: left; } }
 
 .button-wrapper {
-  width: 138px;
   margin: 10px auto 0 auto; }
+
+.header-button-wrapper {
+  float: left;
+  margin: 10px 30px 0 50px; }
+
+.button-wrapper, .header-button-wrapper {
+  width: 138px; }
   @media (min-width: 768px) {
-    .button-wrapper {
-      position: absolute;
-      top: -91px;
-      left: 200px; }
-      .button-wrapper .font-icon {
-        margin-right: -10px; } }
-  .button-wrapper .font-icon {
+    .button-wrapper .font-icon, .header-button-wrapper .font-icon {
+      margin-right: -10px; } }
+  .button-wrapper .font-icon, .header-button-wrapper .font-icon {
     cursor: pointer;
     background-color: #ffc603; }
-  .button-wrapper .stop-icon {
+  .button-wrapper .stop-icon, .header-button-wrapper .stop-icon {
     border-radius: 14px;
     padding: 6px; }
-  .button-wrapper .play-icon {
+  .button-wrapper .play-icon, .button-wrapper .pause-icon, .header-button-wrapper .play-icon, .header-button-wrapper .pause-icon {
     border-radius: 28px;
     padding: 14px;
-    font-size: 24px;
-    padding-left: 19px; }
-  .button-wrapper .forward-icon {
+    font-size: 24px; }
+  .button-wrapper .play-icon, .header-button-wrapper .play-icon {
+    padding-left: 18px; }
+  .button-wrapper .pause-icon, .header-button-wrapper .pause-icon {
+    padding-left: 13px; }
+  .button-wrapper .forward-icon, .header-button-wrapper .forward-icon {
     border-radius: 16px;
     padding: 6px;
     padding-left: 9px; }
@@ -344,7 +364,7 @@ p {
 .concerts .more-button {
   color: #ffc603;
   margin: 15px 0 0 130px;
-  width: 70px; }
+  width: 75px; }
   .concerts .more-button .more-icon {
     border-radius: 15px;
     border: 1px solid #ffc603;
@@ -362,31 +382,41 @@ p {
   margin: 0;
   display: inline-block; }
 
+.links a {
+  display: block; }
+
 .links .more-icon {
   float: right; }
 
 .stations p {
   margin: 0;
-  display: inline-block;
-  width: 80%; }
+  float: left;
+  clear: left; }
 
 .stations .radio-location, .stations .radio-details {
   color: #999999;
   font-size: 11px; }
 
-.stations a {
+.stations a .more-icon {
+  bottom: 20px;
+  position: relative;
   float: right; }
-  .stations a .more-icon {
-    bottom: 20px;
-    position: relative; }
+
+@media (min-width: 768px) {
+  .button-wrapper {
+    display: none; } }
 
 @media (max-width: 768px) {
   .currently-played {
-    height: 545px; }
+    height: calc(100vh - 85px);
+    overflow: hidden; }
+  .header-button-wrapper {
+    display: none; }
   .mobile-background {
+    top: 0;
     position: absolute;
     width: 100%;
-    height: 635px;
+    height: 100vh;
     background: url("img/background.png") no-repeat 100%;
     background-size: 130%; } }
 
@@ -394,17 +424,19 @@ p {
   .sectors {
     position: relative; }
   .row {
-    width: 46%;
+    width: 45%;
     float: left;
-    display: inline-block;
     margin: 5px; }
-  .first-row {
-    width: 380px; }
-  .third-row {
-    position: absolute;
-    width: 380px;
-    left: 0px;
-    top: 1100px; }
+  .sections {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap; }
+    .sections .first-row {
+      order: 1; }
+    .sections .second-row {
+      order: 3; }
+    .sections .third-row {
+      order: 2; }
   .perks {
     border: none; } }
 
@@ -412,7 +444,6 @@ p {
   .row {
     width: 33%;
     float: left;
-    display: inline-block;
     margin: 5px; }
   .first-row {
     width: 380px; }

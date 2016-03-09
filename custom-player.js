@@ -2,25 +2,47 @@
   var nativePlayer = document.getElementById('audio');
   var durationLine = document.getElementsByClassName("active-duration-line")[0];
   var slideButton = document.getElementsByClassName("slide-button")[0];
+  nativePlayer.volume = .5;
 
   function play() {
-    nativePlayer.play();
-    console.log('Playing audio');
+    if (nativePlayer.paused) {
+      nativePlayer.play();
+      toggleButton();
+
+      console.log('Playing audio');
+    }
+    else {
+      pause();
+    }
   }
 
   function pause() {
     nativePlayer.pause();
+    toggleButton();
+
     console.log('Pausing audio');
+  }
+
+  function toggleButton() {
+    var playButtons = document.getElementsByClassName("trigger-button");
+
+    if (nativePlayer.paused || nativePlayer.stopped) {
+      for (var i = 0; i < playButtons.length; i++) {
+        playButtons[i].className = "font-icon trigger-button play-icon";
+      }
+    }
+    else {
+      for (var i = 0; i < playButtons.length; i++) {
+        playButtons[i].className = "font-icon trigger-button pause-icon";
+      }
+    }
   }
 
   function rewind() {
     nativePlayer.currentTime = 0;
-
-    durationLine.style.width = 0 + "px";
-    slideButton.style.left = 0  + "%";
   }
 
-  function getPosition(obj, e) {
+  function getSliderPosition(obj, e) {
     console.log('Getting Position');
 
     var songSliderWidth = obj.offsetWidth;
@@ -32,11 +54,25 @@
   }
 
   function updatePosition(percentage, width) {
-    nativePlayer.currentTime = nativePlayer.duration * percentage;
+
+    nativePlayer.volume = percentage;
     percentageOffset = percentage * 100 - 8;
 
     var activeSongWidth = width * percentage;
     durationLine.style.width = activeSongWidth  + "px";
     slideButton.style.left = percentageOffset  + "%";
+  }
+
+  function showMenu() {
+    var mobileMenu = document.getElementsByClassName("mobile-menu")[0];
+    var mobileBackground = document.getElementsByClassName("currently-played")[0];
+
+    mobileMenu.style.width = "75%";
+    mobileMenu.style.padding = "0 25px";
+
+    mobileBackground.addEventListener("click", function() {
+      mobileMenu.style.width = "0";
+      mobileMenu.style.padding = "0";
+    });
   }
 }

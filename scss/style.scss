@@ -54,17 +54,18 @@ $border-color: #382f0b;
   text-align: center;
 }
 
-.menu-icon:before { content: '\e800'; }
-.icon-mail-alt:before { content: '\e801'; }
-.icon-twitter:before { content: '\e802'; }
-.icon-facebook:before { content: '\e803'; }
-.icon-thumbs-up:before { content: '\e804'; }
-.icon-thumbs-down:before { content: '\e805'; }
-.more-icon:before { content: '\e806'; }
-.volume-icon:before { content: '\e807'; }
+.menu-icon:before { content: '\e803'; }
+.icon-mail-alt:before { content: '\e800'; }
+.icon-twitter:before { content: '\e80a'; }
+.icon-facebook:before { content: '\e809'; }
+.icon-thumbs-up:before { content: '\e801'; }
+.icon-thumbs-down:before { content: '\e802'; }
+.more-icon:before { content: '\e805'; }
+.volume-icon:before { content: '\e804'; }
 .forward-icon:before { content: '\e808'; }
-.play-icon:before { content: '\e809'; }
-.stop-icon:before { content: '\e80a'; }
+.play-icon:before { content: '\e806'; }
+.stop-icon:before { content: '\e807'; }
+.pause-icon:before { content: '\e80b'; }
 
 @mixin center-horizontaly() {
   position: absolute;
@@ -143,16 +144,19 @@ p {
 .currently-played {
   position: relative;
 
-  @include screen-size('mobile') {
-    height: 80vh;
-  }
-
   @include screen-size('tablet') {
     max-height: 380px;
   }
 }
 
+.img-wrapper {
+  max-width: 379px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .logo {
+  float: left;
   margin: 10px;
   
   @include screen-size('mobile') {
@@ -179,9 +183,21 @@ p {
     position: absolute;
     background-color: #000;
     z-index: 1;
-    height: 585px;
-    width: 75%;
-    padding: 25px;
+    height: 100vh;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: width 1s, padding 1s;
+
+    li {
+      height: 35px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    a {
+      display: block;
+    }
 
     .link-title {
       display: inline-block;
@@ -254,13 +270,13 @@ p {
   }
 
   @include screen-size('not-mobile') {
-    position: absolute;
-    left: 360px;
-    top: 45%;
+    float: left;
+    position: relative;
+    top: 38px;
     cursor: pointer;
 
     .active-duration-line {
-      width: 0;
+      width: 75px;
       height: 5px;
       background-color: $yellow;
       float: left;
@@ -280,7 +296,7 @@ p {
       position: absolute;
       border-radius: 50%;
       bottom: -11px;
-      left: 0%;
+      left: 40%;
       border: 4px solid $yellow;
     }
 
@@ -300,6 +316,7 @@ p {
 
   @include screen-size('mobile') {
     margin: 0 auto;
+    height: 48vh;
   }
 
   @include screen-size('not-mobile') {
@@ -325,10 +342,10 @@ p {
 
     .font-icon {
       background-color: #fff;
-      width: 20px;
-      height: 20px;
+      width: 26px;
+      height: 21px;
       border-radius: 50%;
-      padding: 3px;
+      padding: 6px 3px 3px 3px;
       margin: 5px 0;
       cursor: pointer;
     }
@@ -344,9 +361,9 @@ p {
     color: #fff;
     font-size: 22px;
     position: absolute;
-    top: 280px;
+    bottom: 25px;
     width: 20px;
-    left: 340px;
+    right: 20px;
 
     .font-icon {
       margin: 4px 0;
@@ -394,14 +411,18 @@ p {
 }
 
 .button-wrapper {
-  width: 138px;
   margin: 10px auto 0 auto;
+}
+
+.header-button-wrapper {
+  float: left;
+  margin: 10px 30px 0 50px;
+}
+
+.button-wrapper, .header-button-wrapper {
+  width: 138px;
 
   @include screen-size('not-mobile') {
-    position: absolute;
-    top: -91px;
-    left: 200px;
-
     .font-icon {
       margin-right: -10px;
     }
@@ -417,11 +438,18 @@ p {
     padding: 6px;
   }
 
-  .play-icon {
+  .play-icon, .pause-icon {
     border-radius: 28px;
     padding: 14px;
     font-size: 24px;
-    padding-left: 19px;
+  }
+
+  .play-icon {
+    padding-left: 18px
+  }
+
+  .pause-icon {
+    padding-left: 13px;
   }
 
   .forward-icon {
@@ -468,7 +496,7 @@ p {
   .more-button {
     color: $yellow;
     margin: 15px 0 0 130px;
-    width: 70px;
+    width: 75px;
 
     .more-icon {
       border-radius: 15px;
@@ -498,6 +526,10 @@ p {
     display: inline-block;
   }
 
+  a {
+    display: block;
+  }
+
   .more-icon {
     float: right;
   }
@@ -506,8 +538,8 @@ p {
 .stations {
   p {
     margin: 0;
-    display: inline-block;
-    width: 80%;
+    float: left;
+    clear: left;
   }
 
   .radio-location, .radio-details {
@@ -516,24 +548,35 @@ p {
   }
 
   a {
-    float: right;
-
     .more-icon {
       bottom: 20px;
       position: relative;
+      float: right;
     }
+  }
+}
+
+@include screen-size('not-mobile') {
+  .button-wrapper {
+    display: none;
   }
 }
 
 @include screen-size('mobile') {
   .currently-played {
-    height: 545px;
+    height: calc(100vh - 85px);
+    overflow: hidden;
+  }
+
+  .header-button-wrapper {
+    display: none;
   }
 
   .mobile-background {
+    top: 0;
     position: absolute;
     width: 100%;
-    height: 635px;
+    height: 100vh;
     background: url('img/background.png') no-repeat 100%;
     background-size: 130%;
   }
@@ -545,21 +588,27 @@ p {
   }
 
   .row {
-    width: 46%;
+    width: 45%;
     float: left;
-    display: inline-block;
     margin: 5px;
   }
 
-  .first-row {
-    width: 380px;
-  }
+  .sections {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 
-  .third-row {
-    position: absolute;
-    width: 380px;
-    left: 0px;
-    top: 1100px;
+    .first-row {
+      order: 1;
+    }
+
+    .second-row {
+      order: 3;
+    }
+
+    .third-row {
+      order: 2;
+    }
   }
 
   .perks {
@@ -571,7 +620,6 @@ p {
   .row {
     width: 33%;
     float: left;
-    display: inline-block;
     margin: 5px;
   }
 
