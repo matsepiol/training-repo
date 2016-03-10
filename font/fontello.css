@@ -1,0 +1,23 @@
+.font-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+} 
+
+.menu-icon:before { content: '\e803'; }
+.icon-mail-alt:before { content: '\e800'; }
+.icon-twitter:before { content: '\e80a'; }
+.icon-facebook:before { content: '\e809'; }
+.icon-thumbs-up:before { content: '\e801'; }
+.icon-thumbs-down:before { content: '\e802'; }
+.more-icon:before { content: '\e805'; }
+.volume-icon:before { content: '\e804'; }
+.forward-icon:before { content: '\e808'; }
+.play-icon:before { content: '\e806'; }
+.stop-icon:before { content: '\e807'; }
+.pause-icon:before { content: '\e80b'; } 

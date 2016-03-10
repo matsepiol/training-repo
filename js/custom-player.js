@@ -8,7 +8,6 @@
     if (nativePlayer.paused) {
       nativePlayer.play();
       toggleButton();
-
       console.log('Playing audio');
     }
     else {
@@ -61,18 +60,5 @@
     var activeSongWidth = width * percentage;
     durationLine.style.width = activeSongWidth  + "px";
     slideButton.style.left = percentageOffset  + "%";
-  }
-
-  function showMenu() {
-    var mobileMenu = document.getElementsByClassName("mobile-menu")[0];
-    var mobileBackground = document.getElementsByClassName("currently-played")[0];
-
-    mobileMenu.style.width = "75%";
-    mobileMenu.style.padding = "0 25px";
-
-    mobileBackground.addEventListener("click", function() {
-      mobileMenu.style.width = "0";
-      mobileMenu.style.padding = "0";
-    });
   }
 }

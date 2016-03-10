@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="custom-player.js" defer></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
+    <script type="text/javascript" src="js/custom-player.js" defer></script>
   </head>
 
   <body>
@@ -16,49 +17,49 @@
       <ul>
 
         <li class='menu-item active'>
-          <a href="./">
+          <a class="menu-link" href="#now-playing">
             <p class="link-title">Now Playing</p>
             <i class='font-icon more-icon'></i>
           </a>
         </li>
 
         <li class='menu-item'>
-          <a href="./">
+          <a class="menu-link" href="#recently-played">
             <p class="link-title">Recently Played</p>
             <i class='font-icon more-icon'></i>
           </a>
         </li>
 
         <li class='menu-item'>
-          <a href="./">
+          <a class="menu-link" href="#concerts">
             <p class="link-title">Concerts</p>
             <i class='font-icon more-icon'></i>
           </a>
         </li>
 
         <li class='menu-item'>
-          <a href="./">
+          <a class="menu-link" href="#contests">
             <p class="link-title">Contests</p>
             <i class='font-icon more-icon'></i>
           </a>
         </li>
 
         <li class='menu-item'>
-          <a href="./">
+          <a class="menu-link" href="#perks">
             <p class="link-title">Get my PERKS</p>
             <i class='font-icon more-icon'></i>
           </a>
         </li>
 
         <li class='menu-item'>
-          <a href="./">
+          <a class="menu-link" href="#links">
             <p class="link-title">KFOX Links</p>
             <i class='font-icon more-icon'></i>
           </a>
         </li>
 
         <li class='menu-item'>
-          <a href="./">
+          <a class="menu-link" href="#stations">
             <p class="link-title">Station Directory</p>
             <i class='font-icon more-icon'></i>
           </a>
@@ -69,7 +70,7 @@
     <header class="header" role='header'>
       <i class="font-icon menu-icon" onclick="showMenu(this)"></i>
       <img class="logo" src="img/logo.png" alt="logo"> 
-      <i class="font-icon volume-icon"></i>
+      <i class="font-icon volume-icon mobile-design" onclick="toggleVolumeSlider(this)"></i>
 
       <audio id="audio"> 
         <source src="sample.mp3" type="audio/mp3">
@@ -92,7 +93,7 @@
 
     <div class="sections">
       <div class="first-row row">
-        <section class='section currently-played' role='region'>
+        <section id="now-playing" class='section currently-played' role='region'>
 
           <div class="img-wrapper">
             <img class='currently-played-img' src="img/JH.png" alt="hendrix">
@@ -128,7 +129,7 @@
           </div>
         </section>
 
-        <section class="section recently-played bottom-border" role='region'>
+        <section id="recently-played" class="section recently-played bottom-border" role='region'>
           <h1>Recently Played</h1>
 
           <article class='article song-wrapper' role='article'>
@@ -183,7 +184,7 @@
       </div>
 
       <div class="second-row row">
-        <section class="section concerts bottom-border" role='region'>
+        <section id="concerts" class="section concerts bottom-border" role='region'>
           <h1>Concerts</h1>
 
           <article class='article concert-wrapper' role='article'>
@@ -220,7 +221,7 @@
           </article>
         </section>
 
-        <section class="section contests bottom-border" role='region'>
+        <section id="contests" class="section contests bottom-border" role='region'>
           <h1>Contests</h1>
 
           <article class="article contest-wrapper" role='article'>
@@ -248,7 +249,7 @@
           </article>
         </section>
 
-        <section class="section perks bottom-border" role='region'>
+        <section id="perks" class="section perks bottom-border" role='region'>
           <h1>Get My PERKS</h1>
           <article class="article perk-wrapper" role='article'>
             <img class="perk-img" src="img/Auto_Spa.png" alt="Auto Spa">
@@ -275,7 +276,7 @@
       </div>
       
       <div class="third-row row">
-        <section class="section links bottom-border" role='region'>
+        <section id="links" class="section links bottom-border" role='region'>
           <h1>KFOX Links</h1>
 
           <article class='article link-wrapper' role='article'>
@@ -314,7 +315,7 @@
           </article>
         </section>
 
-        <section class="section stations" role='region'>
+        <section id=stations class="section stations" role='region'>
           <h1>Station Directory</h1>
           <article class='article station-wrapper' role='article'> 
             <a href="./">

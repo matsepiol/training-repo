@@ -11,8 +11,17 @@ gulp.task('sass', function() {
     }))
 });
 
+gulp.task('js', function() {
+  return gulp.src('js/main.js')
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
 gulp.task('watch', ['browserSync', 'sass'], function() {
-  gulp.watch('scss/style.scss', ['sass']); 
+  gulp.watch('scss/style.scss', ['sass']);
+  gulp.watch('js/*', ['js']);
 });
 
 gulp.task('browserSync', function() {
@@ -22,4 +31,6 @@ gulp.task('browserSync', function() {
     },
     browser: ["firefox"]
   })
-})
+});
+
+gulp.task('default', ['watch']);

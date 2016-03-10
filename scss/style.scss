@@ -1,4 +1,6 @@
-$mobile-screen: 768px;
+@import 'font/fontello.css';
+
+$mobile-screen: 767px;
 $tablet-screen: 1267px;
 
 $yellow: #ffc603;
@@ -32,7 +34,7 @@ $border-color: #382f0b;
   }
 }
 
-@font-face {
+@font-face { 
   font-family: 'fontello';
   src: url('./font/fontello.eot?98249676');
   src: url('./font/fontello.eot?98249676#iefix') format('embedded-opentype'),
@@ -42,30 +44,6 @@ $border-color: #382f0b;
   font-weight: normal;
   font-style: normal;
 }
-
-.font-icon {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-}
-
-.menu-icon:before { content: '\e803'; }
-.icon-mail-alt:before { content: '\e800'; }
-.icon-twitter:before { content: '\e80a'; }
-.icon-facebook:before { content: '\e809'; }
-.icon-thumbs-up:before { content: '\e801'; }
-.icon-thumbs-down:before { content: '\e802'; }
-.more-icon:before { content: '\e805'; }
-.volume-icon:before { content: '\e804'; }
-.forward-icon:before { content: '\e808'; }
-.play-icon:before { content: '\e806'; }
-.stop-icon:before { content: '\e807'; }
-.pause-icon:before { content: '\e80b'; }
 
 @mixin center-horizontaly() {
   position: absolute;
@@ -111,6 +89,10 @@ h1 {
 
 p {
   color: #fff;
+}
+
+.sections {
+  z-index: 2;
 }
 
 /* Sections styling */
@@ -267,47 +249,60 @@ p {
 .custom-player {
   @include screen-size('mobile') {
     display: none;
+    transform: rotate(90deg);
+    position: relative;
+    left: 87px;
+    top: 134px;
+    float: right;
+
+    .volume-player {
+      display: none;
+    }
   }
 
   @include screen-size('not-mobile') {
-    float: left;
-    position: relative;
-    top: 38px;
-    cursor: pointer;
-
-    .active-duration-line {
-      width: 75px;
-      height: 5px;
-      background-color: $yellow;
-      float: left;
-    }
-
-    .duration-line {
-      width: 150px;
-      height: 5px;
-      background-color: #fff;
-      float: left;
-    }
-
-    .slide-button {
-      width: 20px;
-      height: 20px;
-      background: #fff url("img/player_button.png") no-repeat scroll 50% 41%;
-      position: absolute;
-      border-radius: 50%;
-      bottom: -11px;
-      left: 40%;
-      border: 4px solid $yellow;
-    }
-
-    .volume-player {
-      float: left;
-      position: absolute;
-      color: #fff;
-      bottom: -7px;
-      margin-left: 10px;
-    }
+    display: inline-block;
   }
+
+  float: left;
+  position: relative;
+  top: 38px;
+  cursor: pointer;
+  z-index: 3;
+
+  .active-duration-line {
+    width: 75px;
+    height: 5px;
+    background-color: $yellow;
+    float: left;
+  }
+
+  .duration-line {
+    width: 150px;
+    height: 5px;
+    background-color: #fff;
+    float: left;
+  }
+
+  .slide-button {
+    width: 20px;
+    height: 20px;
+    background: #fff url("img/player_button.png") no-repeat scroll 50% 41%;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -11px;
+    left: 40%;
+    border: 4px solid $yellow;
+  }
+
+  .volume-player {
+    float: left;
+    position: absolute;
+    color: #fff;
+    bottom: -7px;
+    margin-left: 10px;
+  }
+  
 }
 
 .currently-played-img {
