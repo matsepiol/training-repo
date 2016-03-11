@@ -1,15 +1,16 @@
-{
-  var xDown = null;
-  var yDown = null;
+var mainModule = (function() {
+
+  var xDown = null,
+    yDown = null;
 
   var handleTouchStart = function(e) {
     xDown = e.touches[0].clientX;
     yDown = e.touches[0].clientY;
-  }
+  };
 
   var handleTouchMove = function(e) {
     if (!xDown || !yDown) {
-        return;
+      return;
     }
 
     var xUp = e.touches[0].clientX;
@@ -18,19 +19,19 @@
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
 
-    if ( Math.abs(xDiff) > Math.abs(yDiff) ) {
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
       if (xDiff > 0) {
         hideMenu();
       } else {
         showMenu();
       }
     }
-    
+
     xDown = null;
     yDown = null;
-  }
+  };
 
-  function showMenu() {
+  var showMenu = function() {
     var mobileMenu = document.getElementsByClassName("mobile-menu")[0];
     var mobileBackground = document.getElementsByClassName("currently-played")[0];
 
@@ -38,27 +39,26 @@
     mobileMenu.style.padding = "0 25px";
 
     mobileBackground.addEventListener("click", hideMenu);
-  }
+  };
 
-  function hideMenu() {
+  var hideMenu = function() {
     var mobileMenu = document.getElementsByClassName("mobile-menu")[0];
 
     mobileMenu.style.width = "0";
     mobileMenu.style.padding = "0";
-  }
+  };
 
-  function toggleVolumeSlider() {
+  var toggleVolumeSlider = function() {
     var obj = document.getElementsByClassName("custom-player")[0];
 
     if (obj.style.display === "none" || !obj.style.display) {
       obj.style.display = "inline-block";
-    }
-    else {
+    } else {
       obj.style.display = "";
     }
-  }
+  };
 
-  function navigateTo(e) {
+  var navigateTo = function(e) {
     e.preventDefault();
 
     var obj = (e.target === e.currentTarget ? e.target : e.target.parentNode);
@@ -69,17 +69,16 @@
     var scrolling = setInterval(function() {
       if (window.pageYOffset >= targetSectionPosition || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         clearInterval(scrolling);
-      }
-      else {
+      } else {
         window.scrollTo(0, window.pageYOffset + 8);
       }
     }, 1);
-  }
+  };
 
   var currentlyPlayedTab = document.getElementsByClassName("currently-played")[0];
   var menuLink = document.getElementsByClassName("menu-link");
 
-  currentlyPlayedTab.addEventListener('touchstart', handleTouchStart);  
+  currentlyPlayedTab.addEventListener('touchstart', handleTouchStart);
   currentlyPlayedTab.addEventListener('touchmove', handleTouchMove);
 
   for (var i = 0; i < menuLink.length; i++) {
@@ -88,4 +87,10 @@
     //hide menu after navigating
     menuLink[i].addEventListener('click', hideMenu);
   }
-}
+
+  return {
+    showMenu: showMenu,
+    toggleVolumeSlider: toggleVolumeSlider
+  }
+
+})();

@@ -68,22 +68,22 @@
     </nav>
 
     <header class="header" role='header'>
-      <i class="font-icon menu-icon" onclick="showMenu(this)"></i>
+      <i class="font-icon menu-icon" onclick="mainModule.showMenu(this)"></i>
       <img class="logo" src="img/logo.png" alt="logo"> 
-      <i class="font-icon volume-icon mobile-design" onclick="toggleVolumeSlider(this)"></i>
+      <i class="font-icon volume-icon mobile-design" onclick="mainModule.toggleVolumeSlider(this)"></i>
 
       <audio id="audio"> 
         <source src="sample.mp3" type="audio/mp3">
       </audio>
 
       <div class="header-button-wrapper">
-        <i class="font-icon stop-icon" onclick="pause()"></i>
-        <i id="play-button" class="font-icon trigger-button play-icon" onclick="play()"></i>
-        <i class="font-icon forward-icon" onclick="rewind()"></i>
+        <i class="font-icon stop-icon" onclick="playerModule.pause()"></i>
+        <i id="play-button" class="font-icon trigger-button play-icon" onclick="playerModule.play()"></i>
+        <i class="font-icon forward-icon" onclick="playerModule.rewind()"></i>
       </div>
 
        <div class="custom-player">
-        <span class="duration-line" onclick="getSliderPosition(this,event)"> <span id='line' class="active-duration-line"> </span> </span>
+        <span class="duration-line" onclick="playerModule.getSliderPosition(this,event)"> <span id='line' class="active-duration-line"> </span> </span>
         <span class="slide-button"> </span>
         <i class="font-icon volume-icon volume-player"></i>
       </div>
@@ -123,9 +123,9 @@
           </div>
 
           <div class="button-wrapper">
-            <i class="font-icon stop-icon" onclick="pause()"></i>
-            <i class="font-icon play-icon trigger-button" onclick="play()"></i>
-            <i class="font-icon forward-icon" onclick="rewind()"></i>
+            <i class="font-icon stop-icon" onclick="playerModule.pause()"></i>
+            <i class="font-icon play-icon trigger-button" onclick="playerModule.play()"></i>
+            <i class="font-icon forward-icon" onclick="playerModule.rewind()"></i>
           </div>
         </section>
 
